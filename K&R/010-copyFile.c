@@ -3,11 +3,12 @@
 control + D 结束一次输入（等于输入EOF）
 control + C 结束程序进程
 */
-main(){
+int main(){
     int c;
     c = getchar(); 
     while( c!=EOF){
         putchar(c);
         c = getchar();
     }
+    return 0;
 }
