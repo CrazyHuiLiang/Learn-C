@@ -2,7 +2,9 @@
 
 /* 当fahr= 0， 20 ... 300 时，分别
 打印华氏温度与摄氏温度对照表 
-浮点数版本*/
+
+使之能在转换表的顶部打印一个标题
+*/
 int main(){
 	float fahr, celsius;
 	int lower, upper, step;

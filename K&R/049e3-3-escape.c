@@ -13,8 +13,5 @@ int main(){
   while ((c=t[i++]) != '\n')
 	  printf("%c \n\n", c);
 
-
-
-
-	return 0;
+  return 0;
 }

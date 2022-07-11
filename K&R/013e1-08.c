@@ -1,3 +1,6 @@
+/*
+编写一个统计空格、制表符与换行符个数的程序
+*/
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {

@@ -3,7 +3,7 @@
 /* 当fahr= 0， 20 ... 300 时，分别
 打印华氏温度与摄氏温度对照表 
 浮点数版本*/
-main(){
+int main(){
 	float fahr, celsius;
 	int lower, upper, step;
 	lower = 0; /*温度表的下限*/

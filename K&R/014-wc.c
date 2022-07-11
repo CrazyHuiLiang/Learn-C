@@ -3,7 +3,7 @@
 #define IN 1 /* 在单词内 */
 #define OUT 0 /* 在单词外 */
 
-main () {
+int main () {
   int c, nl, nw, nc, state;
   
   nl = nw = nc = 0;
