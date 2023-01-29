@@ -27,7 +27,14 @@
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "osx": {
+                "name": "(lldb) Launch",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/.vscode/a.out",
+                "MIMode": "lldb"
+            }
         }
     ]
 }
