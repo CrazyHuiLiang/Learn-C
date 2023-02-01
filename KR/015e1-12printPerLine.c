@@ -1,3 +1,4 @@
+/* 每行一个单词的形式打印其输出 */
 #include <stdio.h>
 
 int main() {
@@ -9,8 +10,5 @@ int main() {
 			putchar(c);
 		}
 	}
-
 	return 0;
 }
-
-

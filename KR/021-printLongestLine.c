@@ -1,6 +1,7 @@
+/* 读入一组文本行，并把最长的文本行打印出来 */
 #include <stdio.h>
 
-#define MAXLINE 10 /* 允许的输入行的最大长度 */
+#define MAXLINE 1000 /* 允许的输入行的最大长度 */
 
 int getLine(char line[], int maxline);
 void copy(char to[], char from[]);
@@ -44,9 +45,3 @@ void copy(char to[], char from []) {
   while ((to[i]=from[i]) != '\0')
     ++i;
 }
-
-
-
-
-
-

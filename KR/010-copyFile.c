@@ -5,7 +5,7 @@ control + C 结束程序进程
 */
 int main(){
     int c;
-    c = getchar(); 
+    c = getchar();
     while( c!=EOF){
         putchar(c);
         c = getchar();

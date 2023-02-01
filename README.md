@@ -30,5 +30,3 @@ code .
 
 - F9: toggle breakpoint
 - F5: start execution
-
-### .vscode/task.json

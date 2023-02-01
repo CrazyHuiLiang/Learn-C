@@ -11,5 +11,3 @@ int main(){
 	printf("%d \n", nl);
 	return 0;
 }
-
-
