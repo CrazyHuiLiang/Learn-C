@@ -10,7 +10,7 @@ int main(){
   char c;
   scanf("%s", t);
 
-  while ((c=t[i++]) != '\n')
+  while ((c=t[i++]) != EOF)
 	  printf("%c \n\n", c);
 
   return 0;
