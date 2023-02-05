@@ -14,6 +14,12 @@
             "options": {
                 "cwd": "${fileDirname}"
             },
+            "presentation": {
+                // "reveal": "silent",
+                // "revealProblems": "onProblem",
+                // "panel": "new", //默认为“shared“表示共享，改成new之后每个进程创建新的端口
+                // "close": true
+            },
             "problemMatcher": [
                 "$gcc"
             ],
