@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/.vscode/a.out",
-            "args": ["ssss"],
+            "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
@@ -28,6 +28,12 @@
                     "ignoreFailures": true
                 }
             ],
+            "logging": {
+                "exceptions": true,
+                "moduleLoad": true,
+                "programOutput": true,
+                "engineLogging": false,
+            },
             "osx": {
                 "name": "(lldb) Launch",
                 "type": "cppdbg",
