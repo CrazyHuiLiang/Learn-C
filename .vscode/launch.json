@@ -38,7 +38,6 @@
                 "name": "(lldb) Launch",
                 "type": "cppdbg",
                 "request": "launch",
-                "externalConsole": true,
                 "program": "${workspaceFolder}/.vscode/a.out",
                 "MIMode": "lldb"
             }
