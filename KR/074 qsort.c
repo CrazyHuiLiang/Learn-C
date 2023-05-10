@@ -7,11 +7,19 @@ void qsort(int v[], int left, int right);
 
 int main(int argc, char *argv[]) {
 	int n = 10;
-	int v[] = {100, 1, 3, 8, 9, 2, 7, 88, 22, 77};
+	int v[] = {1, 3, 6, 4, 5, 2, 7, 8, 9, 0};
 	qsort(v, 0, n-1);
 	for (int i=0; i<n; i++) {
 		printf("%d ", v[i]);
 	}
+}
+
+void print_int_array(int v[], int n, char *space) {
+	printf("%s", space);
+	for (int i=0; i<n; i++) {
+		printf("%d ", v[i]);
+	}
+	printf("\n");
 }
 
 /*
@@ -23,16 +31,22 @@ int main(int argc, char *argv[]) {
 void qsort(int v[], int left, int right) {
 	int i, last;
 	void swap(int v[], int i, int j);
+
+	printf("\nleft=%d, right=%d\n", left, right);
+	print_int_array(v, 10, "sort ");
 	
 	if (left >= right) {
 		return;
 	}
-	swap(v, left, (left + right/2)); /* 将划分子集的元素 */
+	swap(v, left, (left + right)/2); /* 将划分子集的元素 */
+	print_int_array(v, 10, "swap ");
+
 	last = left;					/* 移动到v[0] */
 	for (i = left+1; i<=right; i++) {/* 划分子集 */
 		if (v[i] < v[left]) {
 			swap(v, ++last, i);
 		}
+		print_int_array(v, 10, "     ");
 	}
 	swap(v, left, last);			/* 恢复划分子集的元素 */
 	qsort(v, left, last-1);
