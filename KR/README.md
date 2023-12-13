@@ -18,3 +18,7 @@
 - [第8章 UNIX系统接口](./Chapter%208%20The%20UNIX%20System%20interface.md)
 - [附录A 参考手册](./Appendix%20A%20Reference%20Manual.md)
 - [附录B 标准库](./Appendix%20B%20Standard%20Library.md)
+
+## 是否可以将函数实现写在 .h 文件中
+
+If you put code in there you can’t include this .h multiple times in multiple files because that would lead to multiple definition of the same things at link time. That’s why you usually declare things in the header (.h) file and then provide the definition in the .cpp

@@ -5,15 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "GDB",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/.vscode/a.out",
             "args": [],
+            "internalConsoleOptions": "openOnSessionStart",
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
-            "externalConsole": false,
+            "externalConsole": true,
             "MIMode": "gdb",
             "preLaunchTask": "${defaultBuildTask}",
             "setupCommands": [
@@ -35,10 +36,6 @@
                 "engineLogging": false,
             },
             "osx": {
-                "name": "(lldb) Launch",
-                "type": "cppdbg",
-                "request": "launch",
-                "program": "${workspaceFolder}/.vscode/a.out",
                 "MIMode": "lldb"
             }
         }
