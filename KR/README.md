@@ -8,16 +8,16 @@
 
 各章节笔记如下：
 
-- [第1章 导言](./Chapter%201%20A%20Tutorial%20Introduction.md)
-- [第2章 类型、运算符和表达式](./Chapter%202%20Types%2COperators%2Cand%20Expressions.md)
-- [第3章 控制流](./Chapter%203%20Control%20Flow.md)
-- [第4章 函数与程序结构](./Chapter%204%20Functions%20and%20Program%20Structure.md)
-- [第5章 指针与数组](./Chapter%205%20Pointers%20and%20Arrays.md)
-- [第6章 结构](./Chapter%206%20Structures.md)
-- [第7章 输入与输出](./Chapter%207%20Input%20and%20Output.md)
-- [第8章 UNIX系统接口](./Chapter%208%20The%20UNIX%20System%20interface.md)
-- [附录A 参考手册](./Appendix%20A%20Reference%20Manual.md)
-- [附录B 标准库](./Appendix%20B%20Standard%20Library.md)
+- [第1章 导言](./Chapter%201%20A%20Tutorial%20Introduction.md) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; p1 - p25
+- [第2章 类型、运算符和表达式](./Chapter%202%20Types%2COperators%2Cand%20Expressions.md) p27 - p43
+- [第3章 控制流](./Chapter%203%20Control%20Flow.md) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;p45 - p55
+- [第4章 函数与程序结构](./Chapter%204%20Functions%20and%20Program%20Structure.md) &emsp;&emsp;&emsp;p57 - p78
+- [第5章 指针与数组](./Chapter%205%20Pointers%20and%20Arrays.md) &emsp;&emsp;&emsp;&emsp;&emsp;p79 - p110
+- [第6章 结构](./Chapter%206%20Structures.md) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;p111 - p132
+- [第7章 输入与输出](./Chapter%207%20Input%20and%20Output.md) &emsp;&emsp;&emsp;&emsp;&emsp;p133 - p148
+- [第8章 UNIX系统接口](./Chapter%208%20The%20UNIX%20System%20interface.md)&emsp;&emsp;&emsp;&emsp;p149 - p166
+- [附录A 参考手册](./Appendix%20A%20Reference%20Manual.md) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;p167 - p218
+- [附录B 标准库](./Appendix%20B%20Standard%20Library.md) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;p219 - p240
 
 ## 是否可以将函数实现写在 .h 文件中
 
