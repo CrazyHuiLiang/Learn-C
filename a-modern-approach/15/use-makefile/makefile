@@ -7,3 +7,5 @@ main.o: main.c mylib.h
 mylib.o: mylib.c mylib.h
 	gcc -c mylib.c
 
+clean:
+	rm -f *.o a.out
