@@ -8,6 +8,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                "${workspaceFolder}/util/*.c",
                 "-o",
                 "${workspaceFolder}/.vscode/a.out"
             ],
@@ -34,12 +35,47 @@
         },
         {
             "type": "cppbuild",
+            "label": "build active template file",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "${workspaceFolder}/util/*.c",
+                "${workspaceFolder}/template.c",
+                "-o",
+                "${workspaceFolder}/.vscode/a.out"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "echo": true,
+                "showReuseMessage": false,
+                "clear": true,
+                "close": false,
+                "focus": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "编译当前选中的继承 template.c 文件"
+        },
+        {
+            "type": "cppbuild",
             "label": "build files in the dir",
             "command": "/usr/bin/gcc",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "${fileDirname}/*.c",
+                "${workspaceFolder}/util/*.c",
                 "-o",
                 "${workspaceFolder}/.vscode/a.out"
             ],

@@ -40,6 +40,41 @@
             }
         },
         {
+            "name": "Template active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/.vscode/a.out",
+            "args": [],
+            "internalConsoleOptions": "openOnSessionStart",
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "preLaunchTask": "build active template file",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "logging": {
+                "exceptions": true,
+                "moduleLoad": true,
+                "programOutput": true,
+                "engineLogging": false,
+            },
+            "osx": {
+                "MIMode": "lldb"
+            }
+        },
+        {
             "name": "Files in the dir",
             "type": "cppdbg",
             "request": "launch",
