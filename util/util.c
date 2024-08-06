@@ -14,3 +14,17 @@ clock_t print_my_process_time() {
     printf("sec = %.2fs\n", (double)c/CLOCKS_PER_SEC);
     return c;
 }
+
+static clock_t start_c;
+
+clock_t console_time_reset() {
+    return start_c = clock();
+}
+
+clock_t console_time() {
+    clock_t c = clock();
+    clock_t take = c - start_c;
+    printf("Start at %ld, End at %ld, Take %.3fms, %ld\n", start_c, c, (double)take/CLOCKS_PER_SEC*1000, take);
+    start_c = c;
+    return c;
+}
