@@ -4,4 +4,4 @@
 /*
     程序入口函数
 */
-int my_main(int argc, char *argv[]);
+int test(int argc, char *argv[]);
