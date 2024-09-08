@@ -1,5 +1,7 @@
 # 标准库
 
+> https://cplusplus.com/reference/cstring/
+
 标准库不是 C语言本身的构成部分，但是支持标准C的实现会提供函数库中的函数声明、类型以及宏定义。
 
 - `<assert.h>` assert宏为程序增加诊断功能
@@ -11,7 +13,7 @@
 - `<limits.h>` 定义了一些表示整型大小的常量
 - `<setjmp.h>`
 - `<stddef.h>`
-- `<string.h>`
+- `<string.h>` 定义了两组字符串函数
 - `<errno.h>`
 - `<locale.h>`
 - `<signal.h>` 提供了一些处理程序运行期间引发的各种异常条件的功能
