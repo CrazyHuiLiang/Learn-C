@@ -2,6 +2,34 @@
     "tasks": [
         {
             "type": "cppbuild",
+            "label": "use make",
+            "command": "make",
+            "args": [
+                "${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "echo": true,
+                "showReuseMessage": false,
+                "clear": true,
+                "close": false,
+                "focus": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "使用 make 进行构建"
+        },
+        {
+            "type": "cppbuild",
             "label": "build active file",
             "command": "/usr/bin/gcc",
             "args": [

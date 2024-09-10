@@ -9,6 +9,7 @@
 */
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char **argv)
 {
@@ -122,5 +123,94 @@ int main(int argc, char **argv)
     }
     printf("\n");
 
+    /*
+        char *strstr(cs, ct)
+        返回一个指针，它指向字符串 ct 第一次出现在字符串 cs 中的位置
+        如果 cs 中不包含字符串 ct，则返回 NULL
+    */
+    printf("strstr: %s\n", strstr("abcdabcd", "cd")); // cdabcd
+    printf("strstr: %s\n", strstr("abcdabcd", "ef")); // (null)
+
+    /*
+        size_t strlen(cs)
+        返回字符串 cs 的长度
+    */
+    printf("strlen: %d\n", strlen("123456789")); // 9
+
+    /*
+        char *strerror(n)
+        返回一个指针，它指向与错误编号 n 对应的错误信息字符串（错误信息的具体内容与具体实现相关）
+    */
+    printf("strerror: 0 %s\n", strerror(0));
+    printf("strerror: 1 %s\n", strerror(1));
+    printf("strerror: 2 %s\n", strerror(2));
+    printf("strerror: 3 %s\n", strerror(3));
+    printf("strerror: 4 %s\n", strerror(4));
+    printf("strerror: 5 %s\n", strerror(5));
+
+    /*
+        char *strtok(s, ct)
+        在 s 中搜索由 ct 中的字符界定的记号
+        进行一系列调用，可以把字符串 s 分成许多记号，这些记号以 ct 中的字符为分界符
+            它搜索 s，找到不包含 ct 中字符的第一个记号，将记号的下一个字符替换为 '\0'，并返回记号的指针，随后，每次调用 strtok 函数时，均返回下一个不包含 ct 中字符的记号
+            当 s 中没有这样的记号时，返回 NULL
+            每次调用时字符串 ct 可以不同
+    */
+    char str2[] ="- This, a sample string.";
+    char *pch2;
+    printf ("Splitting string \"%s\" into tokens:\n",str);
+    pch2 = strtok (str," ,.-");
+    while (pch2 != NULL)
+    {
+        printf("%s\n",pch2);
+        pch2 = strtok (NULL, " ,.-");
+    }
+
+    // 以 mem 开头的函数按照字节数组的方式操作对象，其主要目的是提供一个高效的函数接口（它可以操作任何数据类型，直接在内存中进行字节处理，不对字符串的 \0 进行判断，所以大多时候比 str 开头的函数性能更好）
+
+    /*
+        void *memcpy(s, ct, n)
+        将字符串 ct 中的 n 个字符拷贝到 s 中，并返回 s
+    */
+    char memcpy_s[100];
+    printf("memcpy: %s|'%d'\n", memcpy(memcpy_s, "abcdefg", 6), memcpy_s[6]);      // abcdef|'0'
+    char *memcpy_r = memcpy(memcpy_s+2, memcpy_s, 4);
+    // 如果源和目标内存区域重叠，memcpy 的行为是未定义的。这意味着它可能导致数据损坏或程序崩溃，因为 memcpy 可能在复制过程中覆盖源内存区域
+    printf("memcpy_r: [%s] memcpy_s: [%s], memcpy_s %ld, memcpy_r: %ld\n", memcpy_r, memcpy_s, memcpy_s, memcpy_r); // memcpy_r: [abcd] memcpy_s: [ababcd], memcpy_s 6290768, memcpy_r: 6290770
+
+    /*
+        void *memmove(s, ct, n)
+        与 memcpy 相似，不同的是，当对象重叠时，该函数仍能正确执行
+    */
+    char memmove_s[100] = "abcdef";
+    char *memmove_r = memmove(memmove_s+2, memmove_s, 4);
+    printf("memmove_s: %ld memcpy_s: [%s], memmove_r %ld, memcpy_r: [%s]\n", memcpy_s, memcpy_s, memcpy_r, memcpy_r); // memmove_s: 6290768 memcpy_s: [ababcd], memmove_r 6290770, memcpy_r: [abcd]
+
+    /*
+        int memcmp(cs, ct, n)
+        将 cs 的前 n 个字符与 ct 进行比较，其返回值与 strcmp 的返回值相同
+    */
+    printf("memcmp: %d\n", memcmp("abcd", "abce", 3)); // 0
+    printf("memcmp: %d\n", memcmp("abcd", "abce", 4)); // -1
+    printf("memcmp: %d\n", memcmp("abcd", "abcb", 4)); // 1
+
+    /*
+        void *memchr(cs, c, n)
+        返回一个指针，它指向 c 在 cs 中第一次出现的位置。如果在 cs 的前 n 个字符中找不到匹配，则返回 NULL
+    */
+    printf("memchr: %s\n", memchr("abcd", 'c', 4));         // cd
+    printf("memchr: %d\n", memchr("abcd", 'c', 4) == NULL); // 0
+    printf("memchr: %s\n", memchr("abcd", 'e', 4));         // (null)
+    printf("memchr: %d\n", memchr("abcd", 'e', 4) == NULL); // 1
+
+    /*
+        void *memset(s, c, n)
+        将 s 中的前 n 个字符替换为 c，并返回 s
+    */
+    char mem[10];
+    mem[9] = '\0';
+    printf("memset: %s, %d, %s\n", memset(mem, 'a', 9 /* 注意不能写10，最后一个字节留给字符串结束符 \0 */), strlen(mem), mem);
+    printf("mem len: %u\n", strlen(mem));
+    system("pause");
     return 0;
 }
