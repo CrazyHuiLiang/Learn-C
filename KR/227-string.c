@@ -209,8 +209,10 @@ int main(int argc, char **argv)
     */
     char mem[10];
     mem[9] = '\0';
-    printf("memset: %s, %d, %s\n", memset(mem, 'a', 9 /* 注意不能写10，最后一个字节留给字符串结束符 \0 */), strlen(mem), mem);
-    printf("mem len: %u\n", strlen(mem));
+    printf("memset: %s, %d, %s\n", memset(mem, 'a', 9 /* 注意不能写10，最后一个字节留给字符串结束符 \0 */), strlen(mem), mem); // memset: aaaaaaaaa, 0, aaaaaaaaa 
+    // 在 C语言中并没有规范实参是函数调用时，实参之间的调用顺序，顺序由编译器来决定，上面一行在多个系统中使用 gcc 进行实验，编译出的结果都是先计算了 strlen(mem), 后进行 memset，因此上面一行打印出的字符长度不是 9 而是 0
+    // 在编写程序时要注意规避这种多个实参是函数调用的情况
+    printf("mem len: %u\n", strlen(mem)); // mem len: 9
     system("pause");
     return 0;
 }
