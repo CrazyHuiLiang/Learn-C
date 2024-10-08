@@ -1,4 +1,12 @@
 
+090-strcpy:
+	gcc KR/090-strcpy.c
+
+091-strcmp:
+	gcc KR/091-strcmp.c
+
+093-sort-strings:
+	gcc KR/093-sort-strings.c
 
 107-dcl:
 	gcc KR/107-dcl.c

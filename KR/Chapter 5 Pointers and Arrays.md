@@ -179,3 +179,24 @@ void qsort(void *lineptr[], int left, int right, int (*comp)(void *, void *)) {
     ...
 }
 ```
+
+
+# QA
+
+
+## Q1
+
+```c
+char *lineptr[MAXLINES];
+printf("%s\n", *lineptr++);
+```
+
+lineptr 是一个具有 MAXLINES 个元素的一维数组，每个元素是一个指向字符类型对象的指针。
+*lineptr++ 是以下哪种情况？为什么？
+
+- 读取 lineptr 数组中的第一个字符串，并将 lineptr 指向下一个字符串
+- 读取 lineptr 数组中的第一个字符串，并将指向此字符串头部的指针指向此字符串的第二个字符
+
+答：是前者，`++` 的优先级高于 `*`，`*lineptr++` 相当于 `*(lineptr++)`，`lineptr++` 将 lineptr 指向下一个字符串并返回原有指针，由 `*` 进行解构。类似于 `*` 和 `++` 这样的一元运算符遵循从右至左的结合顺序。
+
+
