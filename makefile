@@ -8,6 +8,12 @@
 093-sort-strings:
 	gcc KR/093-sort-strings.c
 
+100-find:
+	gcc KR/100-find.c
+
+101-find:
+	gcc KR/101-find.c
+
 107-dcl:
 	gcc KR/107-dcl.c
 
