@@ -14,6 +14,12 @@
 101-find:
 	gcc KR/101-find.c
 
+102-return-func:
+	gcc KR/102-return-func.c
+
+103-sort:
+	gcc KR/103-sort.c
+
 107-dcl:
 	gcc KR/107-dcl.c
 
